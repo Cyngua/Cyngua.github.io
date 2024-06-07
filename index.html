@@ -6,7 +6,7 @@
     <title>Personal Web Page</title>
     <style>
         body {
-            background-color: #FFFFFF; /* White */
+            background-color: #F0F8FF;
             font-family: Arial, sans-serif;
             color: #0F4D92; /* Yale Blue */
             margin: 0;
@@ -26,18 +26,28 @@
             height: 100%;
             object-fit: cover;
         }
+        .main-content {
+            display: flex;
+        }
+        .profile-section {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+        }
         .profile-photo {
             background-color: #FFFFFF; /* White */
             border: 5px solid #0F4D92; /* Yale Blue */
             border-radius: 50%;
             width: 200px;
             height: 200px;
-            margin: 0 auto;
             display: block;
+            margin: 0 auto 10px auto;
         }
         .info {
-            text-align: center;
-            margin: 20px 0;
+            margin: 10px 0;
+        }
+        .content-section {
+            flex: 2;
         }
         .section {
             background-color: #FFFFFF; /* White */
@@ -56,26 +66,30 @@
             <img src="MilkyWayMos12-05v.jpg" alt="Header Decoration">
         </div>
 
-        <img src="red-panda---banner-sq.jpg" alt="Profile Photo" class="profile-photo">
-        
-        <div class="info">
-            <h1>Your Name</h1>
-            <p><a href="github-url">GitHub</a> | <a href="linkedin-url">LinkedIn</a></p>
-            <p>Master Student, New Haven, CT</p>
-        </div>
+        <div class="main-content">
+            <div class="profile-section">
+                <img src="red-panda---banner-sq.jpg" alt="Profile Photo" class="profile-photo">
+                <div class="info">
+                    <h1>Cynthia Cai</h1>
+                    <p>Master Student, New Haven, CT</p>
+                </div>
+            </div>
 
-        <div class="section projects">
-            <h2>Projects:</h2>
-            <ul>
-                <li>Project 1: description, <a href="project-1-link">link</a></li>
-                <li>Project 2: description, <a href="project-2-link">link</a></li>
-                <li>Project 3: description, <a href="project-3-link">link</a></li>
-            </ul>
-        </div>
+            <div class="content-section">
+                <div class="section projects">
+                    <h2>Projects:</h2>
+                    <ul>
+                        <li>Project 1: description, <a href="project-1-link">link</a></li>
+                        <li>Project 2: description, <a href="project-2-link">link</a></li>
+                        <li>Project 3: description, <a href="project-3-link">link</a></li>
+                    </ul>
+                </div>
 
-        <div class="section interests">
-            <h2>Interests:</h2>
-            <p>List your interests here...</p>
+                <div class="section interests">
+                    <h2>Interests:</h2>
+                    <p>List your interests here...</p>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
