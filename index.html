@@ -68,6 +68,32 @@
         .projects, .interests {
             margin-bottom: 20px;
         }
+        .interest-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .interest-card {
+            flex: 1 1 calc(33.333% - 10px); /* 3 cards per row, adjust as needed */
+            background-color: #E6E6FA; /* Light Lavender */
+            border: 1px solid #0F4D92;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .interest-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .interest-card h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .interest-card p {
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +108,7 @@
                 <div class="info">
                     <h1>Cynthia Cai</h1>
                     <p>Master Student, New Haven, CT</p>
+                    <p>Applied Mathematics, Health Informatics</p>
                 </div>
             </div>
 
@@ -97,7 +124,23 @@
 
                 <div class="section interests">
                     <h2>Interests:</h2>
-                    <p>List your interests here...</p>
+                    <div class="interest-grid">
+                        <div class="interest-card">
+                            <img src="coding-icon.png" alt="Coding Icon">
+                            <h3>Coding</h3>
+                            <p>I love coding and building new projects.</p>
+                        </div>
+                        <div class="interest-card">
+                            <img src="reading-icon.png" alt="Reading Icon">
+                            <h3>Reading</h3>
+                            <p>Reading science fiction and fantasy novels is my hobby.</p>
+                        </div>
+                        <div class="interest-card">
+                            <img src="traveling-icon.png" alt="Traveling Icon">
+                            <h3>Traveling</h3>
+                            <p>Exploring new places and cultures is a passion of mine.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
