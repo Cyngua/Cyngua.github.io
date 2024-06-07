@@ -11,15 +11,21 @@
             color: #0F4D92; /* Yale Blue */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
             padding: 20px;
+            box-sizing: border-box;
         }
         .header, .footer {
             height: 150px;
             margin-bottom: 20px;
+            width: 100%;
         }
         .header img, .footer img {
             width: 100%;
@@ -28,6 +34,7 @@
         }
         .main-content {
             display: flex;
+            width: 100%;
         }
         .profile-section {
             flex: 1;
@@ -38,8 +45,9 @@
             background-color: #FFFFFF; /* White */
             border: 5px solid #0F4D92; /* Yale Blue */
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
             display: block;
             margin: 0 auto 10px auto;
         }
@@ -54,6 +62,8 @@
             border: 2px solid #0F4D92; /* Yale Blue */
             padding: 20px;
             margin-bottom: 20px;
+            box-sizing: border-box;
+            width: 100%;
         }
         .projects, .interests {
             margin-bottom: 20px;
