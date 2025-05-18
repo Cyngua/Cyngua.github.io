@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia Cai - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/be6d9fdd26.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-circle-user"></i>
+                    <span>Cynthia Cai</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#hero">About</a></li>
+                    <li><a href="index.html#interests">Interests</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="detailed-projects">
+        <div class="container">         
+            <div class="project-list">
+                <!-- Project 1 -->
+                <div class="detailed-project">
+                    <h3>LLM-Powered Metadata Extraction for Scientific Code Repositories</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>LLM</span>
+                        <span>OpenAI API</span>
+                        <span>spaCy</span>
+                        <span>Pandas</span>
+                        <span>Prompt Engineering</span>
+                        <span>API Integration</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Built an automated metadata extraction pipeline to tag and classify 1,800+ computational neuroscience models from ModelDB, working on code-heavy, non-natural language inputs.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Engineered a baseline rule-based system using 5-gram keyword search and regex logic to extract 7 metadata types (e.g., neuron cell types, ion channels, simulation environments).
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Enhanced extraction accuracy and consistency using GPT-4 with chain-of-thought prompting; achieved significant improvements in precision and F1 scores across metadata classes, with over 0.5 Jaccard consistency.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Integrated spaCy and Pandas in a preprocessing stage to isolate relevant tokens before model inference.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Automated tagging for new submissions and streamlined model discoverability for researchers through integration with ModelDB's metadata infrastructure.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="detailed-project">
+                    <h3>Clinical Entity Recognition & Ontology-Aware NLP Pipeline</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>HuggingFace Transformers</span>
+                        <span>UMLS API</span>
+                        <span>MIMIC-IV</span>
+                        <span>HPC (GPU)</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Developed a clinical NLP pipeline to extract and classify semantic groups from deidentified MIMIC clinical notes using SNOMED-CT annotations and UMLS semantic tags.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Fine-tuned a ClinicalBERT model with a CRF layer on GPU-based high-performance computing resources to improve span-level precision; achieved F1 score of 0.75 on test set.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Integrated UMLS API to normalize entity labels into ontology-aligned categories (e.g., condition, procedure, drug), enabling downstream compatibility and interpretability.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Delivered as a modular pipeline and command-line application for internal clinical teams, designed for future integration into EHR decision support systems.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2024 Cynthia Cai</p>
+                <div class="social-links">
+                    <a href="https://github.com/Cyngua" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://alanvoid.com" target="_blank"><i class="fas fa-burger"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

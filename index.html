@@ -3,116 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Web Page</title>
+    <title>Cynthia Cai - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/be6d9fdd26.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-color: #F0F8FF;
-            font-family: Arial, sans-serif;
-            color: #0F4D92; /* Yale Blue */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .header, .footer {
-            height: 150px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-        .header img, .footer img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .main-content {
-            display: flex;
-            width: 100%;
-        }
-        .profile-section {
-            flex: 1;
-            text-align: center;
-            margin-right: 20px;
-        }
-        .profile-photo {
-            background-color: #FFFFFF; /* White */
-            border: 5px solid #0F4D92; /* Yale Blue */
-            border-radius: 50%;
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px auto;
-        }
-        .info {
-            margin: 10px 0;
-        }
-        .content-section {
-            flex: 2;
-        }
-        .section {
-            background-color: #FFFFFF; /* White */
-            border: 2px solid #0F4D92; /* Yale Blue */
-            padding: 20px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            width: 100%;
-        }
-        .projects, .interests {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="MilkyWayMos12-05v.jpg" alt="Header Decoration">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-circle-user"></i>
+                    <span>Cynthia Cai</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">About</a></li>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="main-content">
-            <div class="profile-section">
-                <img src="red-panda---banner-sq.jpg" alt="Profile Photo" class="profile-photo">
-                <div class="info">
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="profile_image.PNG" alt="Cynthia Cai">
+                </div>
+                <div class="hero-text">
                     <h1>Cynthia Cai</h1>
-                    <p><i class="far fa-smile fa-lg"></i> Master Student, New Haven, CT</p>
-                    <p>Applied Mathematics, Health Informatics</p>
-                    <p><a href="https://github.com/Cyngua">GitHub profile</a></p>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <div class="section projects">
-                    <h2>Projects:</h2>
-                    <p><i class="fa-solid fa-cog fa-spin"></i> Biomedical Lay Summarization, <a href="https://github.com/Cyngua/BioLaySum-Project-2024">link</a></p>
-                    <p><i class="fa-solid fa-cog fa-spin"></i> Event-based Neural Spike Time Predictor using Neural Network</p>
-                    <p><i class="fa-solid fa-cog fa-spin"></i> Predicting <a href="https://www.niams.nih.gov/health-topics/lupus#:~:text=Systemic%20lupus%20erythematosus%20(lupus)%20is,disease%2C%20attacks%20its%20own%20tissues.">SLE</a> Accociated Epitopes using DL, <a href="https://github.com/Cyngua/Epitope_Prediction">link</a></p>
-                </div>
-
-                <div class="section interests">
-                    <h2>Interests:</h2>
-                    <p><i class="fa-solid fa-heart fa-lg"></i> Data Analytics, Machine Learning, NLP </p>
-                    <p>
-                        <i class="fas fa-ice-cream fa-lg"></i> Ice Cream
-                        <i class="fas fa-headphones fa-lg"></i> Music
-                        <i class="fas fa-golf-ball fa-lg"></i> Golf
-                        <i class="fas fa-suitcase-rolling fa-lg"></i> Travelling
-                    </p> 
-                    <p><i class="fas fa-burger fa-lg"></i> @ <a href="https://chenglinzhang.com">Alan Void</a></p>
+                    <h2>Data Science | Applied Mathematics | Health Informatics</h2>
+                    <div class="social-links">
+                        <a href="https://github.com/Cyngua" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer">
-            <img src="MilkyWayMos12-05v.jpg" alt="Footer Decoration">
+    <section id="interests">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interests & Skills</h2>
+            </div>
+            <div class="interests-story">
+                <p class="story-intro">Passionate about problem solving through data...</p>
+                <div class="professional-interests">
+                    <div class="interest-group">
+                        <i class="fas fa-brain"></i>
+                        <span>Data Analytics</span>
+                        <p>Uncovering insights from complex datasets</p>
+                    </div>
+                    <div class="interest-group">
+                        <i class="fas fa-robot"></i>
+                        <span>Machine Learning</span>
+                        <p>Building intelligent healthcare solutions</p>
+                    </div>
+                    <div class="interest-group">
+                        <i class="fas fa-comments"></i>
+                        <span>NLP</span>
+                        <p>Making medical knowledge accessible</p>
+                    </div>
+                </div>
+                
+                <p class="story-transition">When not coding, you'll find me...</p>
+                <div class="personal-interests">
+                    <span><i class="fas fa-ice-cream"></i> Exploring ice cream flavors</span>
+                    <span><i class="fas fa-headphones"></i> Lost in music</span>
+                    <span><i class="fas fa-golf-ball"></i> Perfecting my golf swing</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <a href="projects.html" class="view-all-link">View All Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fa-solid fa-code"></i> LLM-Powered Metadata Extraction</h3>
+                    <p>Automated metadata extraction pipeline for computational neuroscience models using LLMs and advanced NLP techniques.</p>
+                    <div class="project-links">
+                        <a href="projects.html" class="details-link">View Details</a>
+                        <a href="https://github.com/Cyngua/BioLaySum-Project-2024" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fa-solid fa-brain"></i> Clinical Entity Recognition</h3>
+                    <p>Clinical NLP pipeline for entity extraction and classification using BERT and ontology-aware approaches.</p>
+                    <div class="project-links">
+                        <a href="projects.html" class="details-link">View Details</a>
+                        <a href="#" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2024 Cynthia Cai</p>
+                <div class="social-links">
+                    <a href="https://github.com/Cyngua" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://chenglinzhang.com" target="_blank"><i class="fas fa-burger"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
