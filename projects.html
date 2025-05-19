@@ -20,11 +20,8 @@
                     <li><a href="index.html#hero">About</a></li>
                     <li><a href="index.html#interests">Interests</a></li>
                     <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
                 </ul>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
@@ -100,7 +97,7 @@
                         <ul class="achievement-list">
                             <li>
                                 <i class="fas fa-check"></i>
-                                Fine-tuned a ClinicalBERT model with a CRF layer on GPU-based high-performance computing resources to improve span-level precision; achieved F1 score of 0.75 on test set.
+                                Fine-tuned a ClinicalBERT model with a CRF layer on GPU-based high-performance computing resources to improve span-level precision; achieved F1 score of 0.80 on test set.
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
@@ -113,6 +110,124 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Project 3 -->
+                <div class="detailed-project">
+                    <h3>Web4Me: AI-Powered Personal Website Builder</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>React</span>
+                        <span>HTML/CSS/JS</span>
+                        <span>FastAPI</span>
+                        <span>OpenAI API</span>
+                        <span>GitHub API</span>
+                        <span>Prompt Engineering</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Built and launched an AI-driven web platform to help job seekers generate personal portfolio websites from resumes, minimizing technical barriers to online presence.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Led the development of customizable portfolio templates for 5 industry verticals (e.g., tech, biomed), using HTML, CSS, and JavaScript; implemented a React-based template selection interface.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Designed GPT prompt workflows to structure resume content into pre-defined portfolio templates.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Collaborated on backend services (Flask + FastAPI), GitHub-based static site hosting for users, and AWS deployment via Terraform.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Beta tested with 30+ users, incorporating feedback into iterative improvements.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="detailed-project">
+                    <h3>Predicting SLE-Associated Epitopes with Deep Learning</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>Transformers</span>
+                        <span>Bioinformatics</span>
+                        <span>IEDB Dataset</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Built a deep learning model to predict the immunogenic potential of epitopes linked to systemic lupus erythematosus (SLE), using 6,553 peptides from the IEDB epitope database.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Reimplemented MITNet, a state-of-the-art epitope prediction architecture, then extended it with biologically informed features beyond sequence data (e.g., structural and chemical attributes).
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Designed a new transformer-based architecture to incorporate multimodal peptide representations, boosting F1-score to 0.94 — a 32% improvement over the MITNet.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Conducted comparative evaluation with ProtBERT, ReLSO, and BEETLE; validated results using stratified cross-validation and ROC analysis.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="detailed-project">
+                    <h3>Predicting Lung Cancer Therapy Discontinuation After Adverse Drug Events</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>XGBoost</span>
+                        <span>Random Forest</span>
+                        <span>Healthcare Claims Data</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Built classification models to predict early therapy discontinuation following adverse drug events (ADEs) in lung cancer patients, aiming to support targeted interventions and promote medication adherence.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Integrated features from multi-source longitudinal data: 100K+ medical claims and 32K+ pharmacy data.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Identified key predictors such as adverse event diagnoses, co-medication patterns, and coverage types using tree-based feature selection.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Trained and evaluated Random Forest and XGBoost models (AUC > 0.80 on holdout set).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -120,7 +235,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>© 2024 Cynthia Cai</p>
+                <p>© 2025 Cynthia Cai</p>
                 <div class="social-links">
                     <a href="https://github.com/Cyngua" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://alanvoid.com" target="_blank"><i class="fas fa-burger"></i></a>

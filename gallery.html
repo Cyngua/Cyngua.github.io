@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia Cai - Photo Memories</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/be6d9fdd26.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-header {
+            text-align: center;
+            padding: 120px 0 40px;
+            background: linear-gradient(to bottom, var(--cream), white);
+        }
+
+        .gallery-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--yale-blue);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-header p {
+            color: #666;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .memory-content {
+            padding: 1.5rem;
+        }
+
+        .memory-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--yale-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light-blue);
+            color: var(--yale-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0,0,0,0.8);
+            transform: rotate(90deg);
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 0 0 8px 8px;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal.show .modal-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Make memory cards clickable */
+        .memory-card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-circle-user"></i>
+                    <span>Cynthia Cai</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#hero">About</a></li>
+                    <li><a href="index.html#interests">Interests</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery-header">
+        <div class="container">
+            <h1>Photo Memories</h1>
+            <p>Capturing moments and adventures across cities and landscapes</p>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <section class="photo-grid">
+        <div class="memory-card">
+            <img src="Photo_drops/bright_future.HEIC" alt="Bright Future" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Embracing Tomorrow</h3>
+                <p class="memory-description">A moment of reflection and anticipation, looking forward to new beginnings and endless possibilities.</p>
+                <div class="location-tag">
+                    <i class="fas fa-star"></i>
+                    <span>Life Moments</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/niagara.HEIC" alt="Niagara Falls" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Niagara's Majesty</h3>
+                <p class="memory-description">Witnessing the raw power and beauty of one of nature's most spectacular waterfalls.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Niagara Falls</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/washingtondc.HEIC" alt="Washington DC" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Capital Chronicles</h3>
+                <p class="memory-description">Exploring the historic heart of America, where every monument tells a story.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Washington, DC</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/nyc.HEIC" alt="New York City" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">City That Never Sleeps</h3>
+                <p class="memory-description">Adventures in the concrete jungle, where dreams are made and stories unfold.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>New York City</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/boston.HEIC" alt="Boston" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Historic Boston</h3>
+                <p class="memory-description">Walking through centuries of history in America's oldest city, where tradition meets innovation.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Boston</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/pittsburgh.HEIC" alt="Pittsburgh" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Steel City Stories</h3>
+                <p class="memory-description">Discovering the charm of Pittsburgh, where three rivers meet and bridges connect communities.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Pittsburgh</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/new_orleans.HEIC" alt="New Orleans" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Big Easy Vibes</h3>
+                <p class="memory-description">Soaking in the jazz, culture, and vibrant spirit of New Orleans.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>New Orleans</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/bahamas_cruise_trip.HEIC" alt="Bahamas Cruise" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Caribbean Dreams</h3>
+                <p class="memory-description">Sailing through crystal-clear waters and experiencing island paradise.</p>
+                <div class="location-tag">
+                    <i class="fas fa-ship"></i>
+                    <span>Bahamas Cruise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/la.HEIC" alt="Los Angeles" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">LA Stories</h3>
+                <p class="memory-description">Living the California dream in the city of angels and endless summers.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Los Angeles</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/golden_gate.HEIC" alt="Golden Gate Bridge" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Golden Gate Glory</h3>
+                <p class="memory-description">Standing before San Francisco's iconic bridge, where fog meets engineering marvel.</p>
+                <div class="location-tag">
+                    <i class="fas fa-bridge"></i>
+                    <span>San Francisco</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/yale.HEIC" alt="Yale University" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Yale Moments</h3>
+                <p class="memory-description">Walking through historic halls and gothic architecture of this prestigious institution.</p>
+                <div class="location-tag">
+                    <i class="fas fa-university"></i>
+                    <span>Yale University</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/providence_ri.HEIC" alt="Providence" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Providence Tales</h3>
+                <p class="memory-description">Exploring the creative capital of Rhode Island, where history and art converge.</p>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Providence</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-card">
+            <img src="Photo_drops/forever_duke.heic" alt="Duke University" class="memory-image">
+            <div class="memory-content">
+                <h3 class="memory-title">Forever Duke</h3>
+                <p class="memory-description">Cherishing memories at Duke's gothic wonderland, where excellence meets tradition.</p>
+                <div class="location-tag">
+                    <i class="fas fa-university"></i>
+                    <span>Duke University</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Cynthia Cai</p>
+                <div class="social-links">
+                    <a href="https://github.com/Cyngua" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://alanvoid.com" target="_blank"><i class="fas fa-burger"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('photoModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalClose = document.querySelector('.modal-close');
+        const memoryCards = document.querySelectorAll('.memory-card');
+
+        // Open modal when clicking on a memory card
+        memoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('.memory-image');
+                const title = card.querySelector('.memory-title').textContent;
+                const description = card.querySelector('.memory-description').textContent;
+                const location = card.querySelector('.location-tag span').textContent;
+
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                modalCaption.innerHTML = `<h3>${title}</h3><p>${description}</p><small>${location}</small>`;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
+        });
+
+        // Close modal when clicking the close button
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html> 
