@@ -26,6 +26,18 @@
         </div>
     </header>
 
+    <section id="filter-section">
+        <div class="container">
+            <div class="filter-panel">
+                <h4>Filter by Skills</h4>
+                <div class="filter-tags" id="filter-tags">
+                    <!-- Tags will be dynamically populated by JavaScript -->
+                </div>
+                <button id="clear-filters" class="clear-filters-btn">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
     <section id="detailed-projects">
         <div class="container">         
             <div class="project-list">
@@ -80,8 +92,10 @@
                     <div class="project-tech-stack">
                         <span>Python</span>
                         <span>HuggingFace Transformers</span>
-                        <span>UMLS API</span>
-                        <span>MIMIC-IV</span>
+                        <span>CRF</span>
+                        <span>Information Extraction</span>
+                        <span>Natural Language Processing</span>
+                        <span>Clinical Ontology</span>
                         <span>HPC (GPU)</span>
                     </div>
 
@@ -117,10 +131,11 @@
                     
                     <div class="project-tech-stack">
                         <span>React</span>
-                        <span>HTML/CSS/JS</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
                         <span>FastAPI</span>
                         <span>OpenAI API</span>
-                        <span>GitHub API</span>
                         <span>Prompt Engineering</span>
                     </div>
 
@@ -161,9 +176,7 @@
                     <div class="project-tech-stack">
                         <span>Python</span>
                         <span>PyTorch</span>
-                        <span>Transformers</span>
                         <span>Bioinformatics</span>
-                        <span>IEDB Dataset</span>
                     </div>
 
                     <div class="project-links">
@@ -200,6 +213,7 @@
                         <span>Python</span>
                         <span>XGBoost</span>
                         <span>Random Forest</span>
+                        <span>Feature Engineering</span>
                         <span>Healthcare Claims Data</span>
                     </div>
 
@@ -222,6 +236,37 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Project 6 -->
+                <div class="detailed-project">
+                    <h3>Biomedical Lay Summarization with BART-PubMed</h3>
+                    
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>Natural Language Processing</span>
+                        <span>HuggingFace Transformers</span>
+                        <span>Summarization</span>
+                    </div>
+
+                    <div class="project-details">
+                        <p class="project-overview">Fine-tuned BART and BART-PubMed on a curated dataset of 4,346 biomedical research articles from eLife, aiming to generate lay summaries for non-experts and interdisciplinary researchers.</p>
+                        
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Implemented a terminology retrieval and replacement pipeline using Webster's Medical Dictionary to improve readability by identifying and simplifying domain-specific biomedical terms.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Achieved measurable improvements in readability (DCRS: ↓9%, FKGL: ↓6.1%) with only minor trade-offs in relevance (ROUGE-1: ↑5.1, ROUGE-L: ↑14.3), as evaluated across multiple biomedical subfields.
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Evaluated summarization quality across relevance (ROUGE, BERTScore), readability (FKGL, CLI, DCRS), and factuality (SummaC), enabling potential application in science communication, patient education, and interdisciplinary research access.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -240,5 +285,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="project-filter.js"></script>
 </body>
 </html> 
